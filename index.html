@@ -15,7 +15,7 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <small id="notice">XSS等の対策なんも考えてないのでセンシティブ情報書かないでね</small>
+  <small id="notice">・XSS等の対策なんも考えてないのでセンシティブ情報書かないでね<br>・データ保存してないのでブラウザ更新すると消えます</small>
 
   <section id="main">
 
@@ -58,7 +58,9 @@
       <fieldset>
         <legend>分類を選択</legend>
         <div id="bunrui"></div>
-        <div><input type="text" name="newBunrui" placeholder="例：桃の皮むき"><button name="other">(新分類で登録)</button></div>
+        <p>(上記のいずれでもない場合)</p>
+        <div><input type="text" name="newBunrui" placeholder="例：桃の皮むき"></div>
+        <div><button name="other">この新分類を登録</button></div>
       </fieldset>
     </form>
     <p>を行いました！</p>
