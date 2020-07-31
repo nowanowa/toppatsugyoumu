@@ -1,1 +1,74 @@
-XSS等の対策なんも考えてないのでセンシティブ情報書かないでね
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,height=device-height,user-scalable=yes,initial-scale=1.0">
+  <meta name="ROBOTS" content="NOARCHIVE,NOINDEX,NOFOLLOW">
+  <meta name="GOOGLEBOT" content="NOINDEX,NOFOLLOW">
+  <meta name="description" content="突発的に発生する業務の時間を集計するツールとしてこんな感じのやつがほしいです" />
+  <meta property="og:url" content="https://nowanowa.github.io/toppatsugyoumu/" />
+  <meta property="og:title" content="突発業務の時間集計" />
+  <meta property="og:description" content="突発的に発生する業務の時間を集計するツールとしてこんな感じのやつがほしいです" />
+  <!-- <meta property="og:image" content="" /> -->
+  <title>突発業務の時間集計</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <small id="notice">XSS等の対策なんも考えてないのでセンシティブ情報書かないでね</small>
+
+  <section id="main">
+
+    <button id="btn_startstop">はじまった！</button>
+
+    <div id="watch">00時間00分00秒000</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>分類
+          <th>合計
+          <th>回数
+          <th>平均
+        </tr>
+      <tbody id="syukei">
+      <tfoot>
+        <tr>
+          <th>全合計
+          <td id="total">
+          <td><td>
+        </tr>
+      <template id="record">
+        <tr>
+          <td><td><td><td>
+        </tr>
+      </template>
+    </table>
+
+    <button id="btn_reset">リセット</button>
+    <button id="btn_setting">分類項目追加</button>
+
+  </section>
+
+  <section id="add" hidden>
+    <div id="time"></div>
+    <p>だけ</p>
+    <form name="workedFor" onsubmit="event.preventDefault(); return false;">
+      <input type="hidden" name="millisec" value="">
+      <fieldset>
+        <legend>分類を選択</legend>
+        <div id="bunrui"></div>
+        <div><input type="text" name="newBunrui" placeholder="例：桃の皮むき"><button name="other">(新分類で登録)</button></div>
+      </fieldset>
+    </form>
+    <p>を行いました！</p>
+    <template id="bunruiButton">
+      <input type="button">
+    </template>
+  </section>
+
+  <section id="setting" hidden>
+  </section>
+
+</body>
+</html>
